@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class RuleDto  {
-	private String id;
+	private Long id;
 	private String name;
 	
 //	@JsonBackReference
