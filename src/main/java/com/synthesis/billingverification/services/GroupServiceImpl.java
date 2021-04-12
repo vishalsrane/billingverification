@@ -47,15 +47,19 @@ public class GroupServiceImpl implements GroupService{
 
 	@Override
 	public GroupDto saveNewGroup(GroupDto groupDto) {
-		Group group = groupRepository.save(groupMapper.getGroupDomainFromGroupDto(groupDto));
-		return groupMapper.getGroupDtoFromGroupDomain(group);
+		Group group = groupMapper.getGroupDomainFromGroupDto(groupDto);		
+		Group groupSaved = groupRepository.save(group);
+		
+		
+		return groupMapper.getGroupDtoFromGroupDomain(groupSaved);
 	}
 
 	@Override
 	public GroupDto updateGroup(Long id, GroupDto groupDto) {
 		groupDto.setId(id);
-		Group group = groupRepository.save(groupMapper.getGroupDomainFromGroupDto(groupDto));		
-		return groupMapper.getGroupDtoFromGroupDomain(group);
+		Group group = groupMapper.getGroupDomainFromGroupDto(groupDto);
+		Group savedGroup = groupRepository.save(group);		
+		return groupMapper.getGroupDtoFromGroupDomain(savedGroup);
 	}
 
 	
