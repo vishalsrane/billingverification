@@ -62,6 +62,16 @@ public class GroupServiceImpl implements GroupService{
 		return groupMapper.getGroupDtoFromGroupDomain(savedGroup);
 	}
 
+	@Override
+	public boolean deleteUser(Long id) {
+		try {
+			groupRepository.deleteById(id);
+			return true;
+		}catch (Exception e) {
+			return false;
+		}
+	}
+
 	
 
 }

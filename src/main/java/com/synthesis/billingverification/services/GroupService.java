@@ -17,4 +17,6 @@ public interface GroupService {
 
 	GroupDto updateGroup(Long id, GroupDto groupDto);
 
+	boolean deleteUser(Long id);
+
 }
